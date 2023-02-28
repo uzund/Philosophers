@@ -18,13 +18,17 @@ Bu projede, öğrenciler aşağıdaki nesneleri kullanacaklardır:
 	•	birkaç dizge işleme işlevi (örneğin, "strlen" ve "strcpy")
 	•	birkaç dizi işleme işlevi (örneğin, "malloc" ve "free")
 	•	birkaç sıralama işlevi (örneğin, "quicksort" ve "mergesort")
+
 Ödevler
+
 Bu projede, öğrenciler aşağıdaki görevleri yerine getireceklerdir:
 	•	Bir dosyayı okuma ve yazma
 	•	Bir sayıyı bir diziye yerleştirme
 	•	Bir dizi sıralama
 	•	Birkaç benzer görevi yerine getirme
+
 Ek kaynaklar
+
 Aşağıdaki kaynaklar, öğrencilerin bu proje için yararlı olabilir:
 	•	"The C Programming Language" (Brian W. Kernighan ve Dennis M. Ritchie)
 	•	"C Programming Absolute Beginner's Guide" (Greg Perry ve Dean Miller)

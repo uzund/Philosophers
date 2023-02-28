@@ -1,6 +1,7 @@
 # Philosophers
 
-42 Silicon Vadisi Programlama Havuzu
+# 42 Silicon Vadisi Programlama Havuzu
+
 Açıklama
 Bu proje, 42 Silicon Vadisi'nde yazılım mühendisliği öğrenen öğrencilere verilir. Bu proje, öğrencilerin C programlama dilindeki temel becerilerini ölçmek için tasarlanmıştır.
 Özet

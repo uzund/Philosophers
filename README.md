@@ -118,7 +118,8 @@ Zorunlu kısım için bir program ve bonus kısım için ayrı bir program yazma
 
 number_of_philosophers 
 time_to_die 
-time_to_eat time_to_sleep 
+time_to_eat 
+time_to_sleep 
 [number_of_times_each_philosopher_must_eat]
 
 ◦ filozof_sayısı: Filozof sayısı ve ayrıca çatal sayısı.
@@ -131,6 +132,25 @@ time_to_eat time_to_sleep
 
 ◦ time_of_times_each_philosopher_must_eat (isteğe bağlı bağımsız değişken): Tüm filozoflar en az time_of_times_each_philosopher_must_eat kez yemişse, simülasyon durur. Belirtilmezse, bir filozof öldüğünde simülasyon durur.
 
-• Her filozofun 1'den filozofların_sayısı'na kadar değişen bir numarası vardır.
+• Her filozofun 1'den number_of_philosophers'na kadar değişen bir numarası vardır.
 
-• Filozof sayısı 1, filozof sayısı_filozofların yanında oturuyor. Diğer herhangi bir filozof sayısı N, filozof sayısı N - 1 ile filozof sayısı N + 1 arasında yer alır.
+• Filozof sayısı 1, number_of_philosophers'ların yanında oturuyor. Diğer herhangi bir filozof sayısı N, filozof sayısı N - 1 ile filozof sayısı N + 1 arasında yer alır.
+
+# Programınızın günlükleri hakkında:
+
+• Bir filozofun herhangi bir durum değişikliği aşağıdaki gibi biçimlendirilmelidir:
+
+◦ timestamp_in_ms X has taken a fork 
+◦ timestamp_in_ms X is eating
+◦ timestamp_in_ms X is sleeping
+◦ timestamp_in_ms X is thinking
+◦ timestamp_in_ms X died
+
+timestamp_in_ms'yi milisaniye cinsinden geçerli zaman damgasıyla değiştirin
+ve filozof numarası X ile değiştirin.
+
+• Görüntülenen bir durum mesajı başka bir mesajla karıştırılmamalıdır.
+
+• Bir filozofun öldüğünü bildiren bir mesaj, filozofun gerçek ölümünden en fazla 10 ms sonra gösterilmelidir.
+
+• Yine filozoflar ölmekten kaçınmalıdır!

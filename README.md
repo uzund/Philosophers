@@ -117,9 +117,13 @@ Zorunlu kısım için bir program ve bonus kısım için ayrı bir program yazma
 • Program(lar)ınız aşağıdaki bağımsız değişkenleri almalıdır: 
 
 number_of_philosophers 
+
 time_to_die 
+
 time_to_eat 
+
 time_to_sleep 
+
 [number_of_times_each_philosopher_must_eat]
 
 ◦ filozof_sayısı: Filozof sayısı ve ayrıca çatal sayısı.
@@ -141,9 +145,13 @@ time_to_sleep
 • Bir filozofun herhangi bir durum değişikliği aşağıdaki gibi biçimlendirilmelidir:
 
 ◦ timestamp_in_ms X has taken a fork 
+
 ◦ timestamp_in_ms X is eating
+
 ◦ timestamp_in_ms X is sleeping
+
 ◦ timestamp_in_ms X is thinking
+
 ◦ timestamp_in_ms X died
 
 timestamp_in_ms'yi milisaniye cinsinden geçerli zaman damgasıyla değiştirin

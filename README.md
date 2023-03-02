@@ -108,3 +108,29 @@ Filozof yemek için sağ ve sol çatallarını her bir eline birer tane alır.
 • Filozoflar başka bir filozofun ölmek üzere olup olmadığını bilmiyorlar.
 
 • Filozofların ölmekten kaçınmaları gerektiğini söylemeye gerek yok!
+
+# Bölüm IV Küresel kurallar
+Zorunlu kısım için bir program ve bonus kısım için ayrı bir program yazmalısınız (eğer bonus kısmını yapmaya karar verirseniz). Her ikisi de aşağıdaki kurallara uymak zorundadır:
+
+• Global değişkenler yasaktır!
+
+• Program(lar)ınız aşağıdaki bağımsız değişkenleri almalıdır: 
+
+number_of_philosophers 
+time_to_die 
+time_to_eat time_to_sleep 
+[number_of_times_each_philosopher_must_eat]
+
+◦ filozof_sayısı: Filozof sayısı ve ayrıca çatal sayısı.
+
+◦ time_to_die (milisaniye cinsinden): Bir filozof, ölmek için_zamanı son yemeğinin başlangıcından ya da simülasyonun başlangıcından itibaren milisaniyeler içinde yemeye başlamadıysa, ölürler.
+
+◦ time_to_eat (milisaniye cinsinden): Bir filozofun yemek yemesi için geçen süre. Bu süre zarfında iki çatal tutmaları gerekecek.
+
+◦ time_to_sleep uyku_zamanı (milisaniye olarak): Bir filozofun uykuda geçireceği süre.
+
+◦ time_of_times_each_philosopher_must_eat (isteğe bağlı bağımsız değişken): Tüm filozoflar en az time_of_times_each_philosopher_must_eat kez yemişse, simülasyon durur. Belirtilmezse, bir filozof öldüğünde simülasyon durur.
+
+• Her filozofun 1'den filozofların_sayısı'na kadar değişen bir numarası vardır.
+
+• Filozof sayısı 1, filozof sayısı_filozofların yanında oturuyor. Diğer herhangi bir filozof sayısı N, filozof sayısı N - 1 ile filozof sayısı N + 1 arasında yer alır.

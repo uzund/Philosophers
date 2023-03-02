@@ -84,16 +84,27 @@ will print its death.
 
 # Bölüm III Genel Bakış
 Bu görevi başarmak istiyorsanız bilmeniz gerekenler şunlardır:
+
 • Bir veya daha fazla filozof yuvarlak bir masada oturur.
+
 Masanın ortasında büyük bir kase spagetti var.
+
 • Filozoflar alternatif olarak yer, düşünür veya uyurlar.
+
 Yemek yerken düşünmezler ve uyumazlar; düşünürken ne yemek yiyorlar ne de uyuyorlar;
 ve tabi ki uyurken ne yemek yiyorlar ne de düşünüyorlar.
+
 • Masada çatal da vardır. Filozof sayısı kadar çatal vardır.
+
 • Spagettiyi tek çatalla servis etmek ve yemek çok zahmetli olduğu için,
 Filozof yemek için sağ ve sol çatallarını her bir eline birer tane alır.
+
 • Filozof yemeğini bitirince çatalını tekrar masaya koyar ve uyumaya başlar. Uyandıktan sonra tekrar düşünmeye başlarlar. Bir filozof açlıktan öldüğünde simülasyon durur.
+
 • Her filozofun yemek yemesi gerekir ve asla aç kalmamalıdır.
+
 • Filozoflar birbirleriyle konuşmazlar.
+
 • Filozoflar başka bir filozofun ölmek üzere olup olmadığını bilmiyorlar.
+
 • Filozofların ölmekten kaçınmaları gerektiğini söylemeye gerek yok!

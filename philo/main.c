@@ -6,7 +6,7 @@
 /*   By: duzun <davut@uzun.ist>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 15:35:01 by duzun             #+#    #+#             */
-/*   Updated: 2023/03/13 18:49:08 by duzun            ###   ########.fr       */
+/*   Updated: 2023/03/13 18:55:29 by duzun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ int	init_all(t_main *player, char **av)
 {
 	player->number_of_philophers = ft_atoi(av[1]);
 	player->time_to_die = ft_atoi(av[2]);
-	// printf("\n %d", player->time_to_die);
 	player->time_to_eat = ft_atoi(av[3]);
 	player->time_to_sleep = ft_atoi(av[4]);
 	player->all_ate = 0;
@@ -102,9 +101,11 @@ int	main(int ac, char **av)
 	if (ac != 5 && ac != 6)
 		return (write_err("\nYanlış miktarda bağımsız değişken\
 \nWrong amount of arguments"));
-	if ((error_rtn = ft_chack_av(ac, av)))
+	error_rtn = ft_chack_av(ac, av);
+	if (error_rtn)
 		return (error_put(error_rtn));
-	if ((error_rtn = init_all(&player, av)))
+	error_rtn = init_all(&player, av);
+	if (error_rtn)
 		return (error_put(error_rtn));
 	if (ft_run(&player))
 		return (write_err("\nKonular oluşturulurken bir hata oluştu\

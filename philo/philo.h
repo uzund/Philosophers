@@ -6,7 +6,7 @@
 /*   By: duzun <davut@uzun.ist>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 14:41:04 by duzun             #+#    #+#             */
-/*   Updated: 2023/03/14 00:31:21 by duzun            ###   ########.fr       */
+/*   Updated: 2023/03/14 01:07:44 by duzun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,9 @@ long long				time_diff(long long passing_time, long long now_time);
 void					smart_sleep(long long time, t_main *player);
 int						ft_run(t_main *player);
 void					exit_ft_run(t_main *player, t_game *philos);
+void					death_checker2(t_main *r, t_game *p);
+void					death_checker3(t_main *r, t_game *p);
+void					*p_thread(void *void_philosopher);
+void					philo_eats(t_game *philo);
 
 #endif

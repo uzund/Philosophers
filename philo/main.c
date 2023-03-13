@@ -6,7 +6,7 @@
 /*   By: duzun <davut@uzun.ist>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 15:35:01 by duzun             #+#    #+#             */
-/*   Updated: 2023/03/14 01:28:58 by duzun            ###   ########.fr       */
+/*   Updated: 2023/03/14 01:50:43 by duzun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	init_all2(t_main *player)
 {
 	printf("0 1 🍽  has taken a fork\n");
 	usleep(player->time_to_eat * 1000);
-	printf("%d 1  died\n", player->time_to_die + 1);
+	printf("%d 💀 died\n", player->time_to_die + 1);
 	return (2);
 }
 

@@ -6,7 +6,7 @@
 /*   By: duzun <davut@uzun.ist>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 14:40:09 by duzun             #+#    #+#             */
-/*   Updated: 2023/03/13 15:37:24 by duzun            ###   ########.fr       */
+/*   Updated: 2023/03/13 18:50:33 by duzun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	*p_thread(void *void_philosopher)
 	return (NULL);
 }
 
-void	exit_launcher(t_main *player, t_game *philos)
+void	exit_ft_run(t_main *player, t_game *philos)
 {
 	int	i;
 
@@ -97,7 +97,7 @@ void	death_checker(t_main *r, t_game *p)
 	}
 }
 
-int	launcher(t_main *player)
+int	ft_run(t_main *player)
 {
 	int		i;
 	t_game	*phi;
@@ -113,6 +113,6 @@ int	launcher(t_main *player)
 		i++;
 	}
 	death_checker(player, player->philosophers);
-	exit_launcher(player, phi);
+	exit_ft_run(player, phi);
 	return (0);
 }

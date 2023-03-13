@@ -6,7 +6,7 @@
 #    By: duzun <davut@uzun.ist>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/28 14:35:42 by duzun             #+#    #+#              #
-#    Updated: 2023/03/13 15:31:09 by duzun            ###   ########.fr        #
+#    Updated: 2023/03/13 17:49:32 by duzun            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,10 +37,10 @@ $(NAME): $(OBJECTS_PREFIXED)
 	@$(CC) -o $(NAME) $(OBJECTS_PREFIXED) $(CFLAGS)
 	@echo "\n✅ ${GREEN}Çalıştırılabilir "philo" oluşturuldu ve kullanıma hazır!${BLUE} -- >${RED} $(NAME) ${BLUE}< --${RESET}$(END)"
 	@echo "${RED}Çalıştırmak için: ${BLUE}./philo <arguman> ${GREEN}  örnek: ./philo 5 800 200 200 3 \
-	\n\"./philo filozofların_sayısı, ölmek_için_zaman, yemek_için_zaman, uyumak_için_zaman, her_filozofun_kaç_kez_yemek_yemesi_gerektiği\" ${RESET}$(END)"
+	\n\"./philo filozofların_sayısı, ölmek_için_zaman, yemek_için_zaman, uyumak_için_zaman, \[her_filozofun_kaç_kez_yemek_yemesi_gerektiği\]\" ${RESET}$(END)"
 	@echo "\n✅ ${GREEN}Executable "philo" created and ready for use!${BLUE} -- >${RED} $(NAME) ${BLUE}< --${RESET}$(END)"
 	@echo "${RED}To make it work: ${BLUE} ./philo <arguman> ${GREEN}  example:./philo 5 800 200 200 3 \
-	\n\"./philo number_of_philophers, time_to_die, time_to_eat, time_to_sleep, number_of_times_each_philosophers_must_eath\" ${RESET}$(END)\n"
+	\n\"./philo number_of_philophers, time_to_die, time_to_eat, time_to_sleep, \[number_of_times_each_philosophers_must_eath\]\" ${RESET}$(END)\n"
 
 all: $(NAME)	
  

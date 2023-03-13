@@ -6,7 +6,7 @@
 /*   By: duzun <davut@uzun.ist>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 14:41:04 by duzun             #+#    #+#             */
-/*   Updated: 2023/03/13 14:24:07 by duzun            ###   ########.fr       */
+/*   Updated: 2023/03/13 18:49:18 by duzun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ typedef struct s_main
 }	t_main;
 
 void					ft_putstr(char *s);
+int						ft_chack_av(int ac, char **av);
 int						write_err(char *str);
 int						error_put(int error);
 int						init_all(t_main *player, char **av);
@@ -56,7 +57,7 @@ void					print_status(t_main *player, int id, char *string);
 long long				time_stamp(void);
 long long				time_diff(long long passing_time, long long now_time);
 void					smart_sleep(long long time, t_main *player);
-int						launcher(t_main *player);
-void					exit_launcher(t_main *player, t_game *philos);
+int						ft_run(t_main *player);
+void					exit_ft_run(t_main *player, t_game *philos);
 
 #endif

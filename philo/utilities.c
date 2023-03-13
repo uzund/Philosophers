@@ -6,10 +6,9 @@
 /*   By: duzun <davut@uzun.ist>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 15:03:19 by duzun             #+#    #+#             */
-/*   Updated: 2023/03/14 00:26:22 by duzun            ###   ########.fr       */
+/*   Updated: 2023/03/14 01:30:14 by duzun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "philo.h"
 
@@ -56,7 +55,7 @@ void	smart_sleep(long long time, t_main *player)
 	while (1)
 	{
 		pthread_mutex_lock(&(player->die_mutex));
-		if(player->dieded)
+		if (player->dieded)
 		{
 			pthread_mutex_unlock(&(player->die_mutex));
 			break ;

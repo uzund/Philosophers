@@ -6,7 +6,7 @@
 /*   By: duzun <davut@uzun.ist>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 15:35:01 by duzun             #+#    #+#             */
-/*   Updated: 2023/03/14 00:35:04 by duzun            ###   ########.fr       */
+/*   Updated: 2023/03/14 01:28:58 by duzun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,6 @@ int	init_all(t_main *player, char **av)
 	init_philosophers(player);
 	return (0);
 }
-
 
 int	main(int ac, char **av)
 {

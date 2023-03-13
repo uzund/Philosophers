@@ -6,7 +6,7 @@
 /*   By: duzun <davut@uzun.ist>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 15:35:01 by duzun             #+#    #+#             */
-/*   Updated: 2023/03/13 18:55:29 by duzun            ###   ########.fr       */
+/*   Updated: 2023/03/14 00:35:04 by duzun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,10 @@ int	init_mutex(t_main *player)
 	if (pthread_mutex_init(&(player->writing), NULL))
 		return (1);
 	if (pthread_mutex_init(&(player->check_meal), NULL))
+		return (1);
+	if (pthread_mutex_init(&(player->die_mutex), NULL))
+		return (1);
+	if (pthread_mutex_init(&(player->ate_mutex), NULL))
 		return (1);
 	return (0);
 }
@@ -47,6 +51,14 @@ int	init_philosophers(t_main *player)
 	return (0);
 }
 
+int	init_all2(t_main *player)
+{
+	printf("0 1 🍽  has taken a fork\n");
+	usleep(player->time_to_eat * 1000);
+	printf("%d 1  died\n", player->time_to_die + 1);
+	return (2);
+}
+
 int	init_all(t_main *player, char **av)
 {
 	player->number_of_philophers = ft_atoi(av[1]);
@@ -55,6 +67,8 @@ int	init_all(t_main *player, char **av)
 	player->time_to_sleep = ft_atoi(av[4]);
 	player->all_ate = 0;
 	player->dieded = 0;
+	if (player->number_of_philophers == 1)
+		return (init_all2(player));
 	if (player->number_of_philophers < 2 || player->time_to_die < 0
 		|| player->time_to_eat < 0 || player->time_to_sleep < 0
 		|| player->number_of_philophers > 250)
@@ -73,25 +87,6 @@ int	init_all(t_main *player, char **av)
 	return (0);
 }
 
-int	ft_chack_av(int ac, char **av)
-{
-	int	i;
-	int	j;
-
-	i = 1;
-	while (i <= ac - 1)
-	{
-		j = 0;
-		while (av[i][j])
-		{
-			if (!(av[i][j] >= '0' && av[i][j] <= '9'))
-				return (1);
-			j++;
-		}
-		i++;
-	}
-	return (0);
-}
 
 int	main(int ac, char **av)
 {
@@ -105,6 +100,8 @@ int	main(int ac, char **av)
 	if (error_rtn)
 		return (error_put(error_rtn));
 	error_rtn = init_all(&player, av);
+	if (error_rtn == 2)
+		return (0);
 	if (error_rtn)
 		return (error_put(error_rtn));
 	if (ft_run(&player))

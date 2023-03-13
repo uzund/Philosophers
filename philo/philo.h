@@ -6,7 +6,7 @@
 /*   By: duzun <davut@uzun.ist>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 14:41:04 by duzun             #+#    #+#             */
-/*   Updated: 2023/03/13 18:49:18 by duzun            ###   ########.fr       */
+/*   Updated: 2023/03/14 00:31:21 by duzun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,18 @@ typedef struct s_main
 	pthread_mutex_t		check_meal;
 	pthread_mutex_t		forks[250];
 	pthread_mutex_t		writing;
+	pthread_mutex_t		die_mutex;
+	pthread_mutex_t		ate_mutex;
 	t_game				philosophers[250];
 }	t_main;
 
 void					ft_putstr(char *s);
 int						ft_chack_av(int ac, char **av);
+int						ft_check_number(const char *s);
 int						write_err(char *str);
 int						error_put(int error);
+int						ft_isin(char c);
+int						ft_isdigit(int c);
 int						init_all(t_main *player, char **av);
 int						ft_atoi(const char *str);
 void					print_status(t_main *player, int id, char *string);

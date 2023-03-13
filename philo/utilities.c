@@ -6,7 +6,7 @@
 /*   By: duzun <davut@uzun.ist>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 15:03:19 by duzun             #+#    #+#             */
-/*   Updated: 2023/03/13 14:24:19 by duzun            ###   ########.fr       */
+/*   Updated: 2023/03/14 00:26:22 by duzun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,15 @@ void	smart_sleep(long long time, t_main *player)
 	long long	i;
 
 	i = time_stamp();
-	while (!(player->dieded))
+	while (1)
 	{
+		pthread_mutex_lock(&(player->die_mutex));
+		if(player->dieded)
+		{
+			pthread_mutex_unlock(&(player->die_mutex));
+			break ;
+		}
+		pthread_mutex_unlock(&(player->die_mutex));
 		if (time_diff(i, time_stamp()) >= time)
 			break ;
 		usleep(50);
@@ -64,12 +71,14 @@ void	smart_sleep(long long time, t_main *player)
 void	print_status(t_main *player, int id, char *string)
 {
 	pthread_mutex_lock(&(player->writing));
+	pthread_mutex_lock(&(player->die_mutex));
 	if (!(player->dieded))
 	{
 		printf("%lli ", time_stamp() - player->first_time_stamp);
 		printf("%i ", id + 1);
 		printf("%s\n", string);
 	}
+	pthread_mutex_unlock(&(player->die_mutex));
 	pthread_mutex_unlock(&(player->writing));
 	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: duzun <davut@uzun.ist>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 14:40:09 by duzun             #+#    #+#             */
-/*   Updated: 2023/03/14 01:24:35 by duzun            ###   ########.fr       */
+/*   Updated: 2023/03/15 05:21:05 by duzun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,71 +25,71 @@ void	exit_ft_run(t_main *player, t_game *philos)
 	pthread_mutex_destroy(&(player->writing));
 }
 
-void	death_checker2(t_main *r, t_game *p)
+void	death_checker2(t_main *player, t_game *p)
 {
 	int	i;
 
 	i = -1;
-	while (++i < r->number_of_philophers && !(r->dieded))
+	while (++i < player->number_of_philophers && !(player->dieded))
 	{
-		pthread_mutex_lock(&(r->check_meal));
-		if (time_diff(p[i].t_last_meal, time_stamp()) > r->time_to_die)
+		pthread_mutex_lock(&(player->check_meal));
+		if (time_diff(p[i].t_last_meal, time_stamp()) > player->time_to_die)
 		{
-			print_status(r, i, "💀 died");
-			pthread_mutex_lock(&(r->die_mutex));
-			r->dieded = 1;
-			pthread_mutex_unlock(&(r->die_mutex));
+			print_status(player, i, "💀 died");
+			pthread_mutex_lock(&(player->die_mutex));
+			player->dieded = 1;
+			pthread_mutex_unlock(&(player->die_mutex));
 		}
-		pthread_mutex_unlock(&(r->check_meal));
+		pthread_mutex_unlock(&(player->check_meal));
 		usleep(100);
 	}
 }
 
-void	death_checker3(t_main *r, t_game *p)
+void	death_checker3(t_main *player, t_game *p)
 {
 	int	i;
 
 	i = 0;
 	while (1)
 	{
-		pthread_mutex_lock(&(r->ate_mutex));
-		if (!(r->nb_eat != -1 && i < r->number_of_philophers && \
-			p[i].x_ate + 1 >= r->nb_eat))
+		pthread_mutex_lock(&(player->ate_mutex));
+		if (!(player->nb_eat != -1 && i < player->number_of_philophers && \
+			p[i].x_ate + 1 >= player->nb_eat))
 		{				
-			pthread_mutex_unlock(&(r->ate_mutex));
+			pthread_mutex_unlock(&(player->ate_mutex));
 			break ;
 		}
-		pthread_mutex_unlock(&(r->ate_mutex));
+		pthread_mutex_unlock(&(player->ate_mutex));
 		i++;
 	}
-	if (i == r->number_of_philophers)
+	if (i == player->number_of_philophers)
 	{
-		pthread_mutex_lock(&(r->ate_mutex));
-		r->all_ate = 1;
-		pthread_mutex_unlock(&(r->ate_mutex));
+		pthread_mutex_lock(&(player->ate_mutex));
+		player->all_ate = 1;
+		pthread_mutex_unlock(&(player->ate_mutex));
 	}
 }
 
-void	death_checker(t_main *r, t_game *p)
+void	death_checker(t_main *player, t_game *p)
 {
 	while (1)
 	{
-		death_checker2(r, p);
-		pthread_mutex_lock(&(r->die_mutex));
-		if (r->dieded)
+		death_checker2(player, p);
+		pthread_mutex_lock(&(player->die_mutex));
+		if (player->dieded)
 		{
-			pthread_mutex_unlock(&(r->die_mutex));
+			pthread_mutex_unlock(&(player->die_mutex));
 			break ;
 		}
-		pthread_mutex_unlock(&(r->die_mutex));
-		death_checker3(r, p);
-		pthread_mutex_lock(&(r->ate_mutex));
-		if (r->all_ate)
+		pthread_mutex_unlock(&(player->die_mutex));
+		death_checker3(player, p);
+		pthread_mutex_lock(&(player->ate_mutex));
+		if (player->all_ate)
 		{
-			pthread_mutex_unlock(&(r->ate_mutex));
+			pthread_mutex_unlock(&(player->ate_mutex));
 			break ;
 		}
-		pthread_mutex_unlock(&(r->ate_mutex));
+		pthread_mutex_unlock(&(player->ate_mutex));
 	}
 }
 
